@@ -1,15 +1,11 @@
-import threading
-from time import sleep
-
-from PyQt5.QtGui import QIcon, QPixmap
-from PyQt5.QtCore import QEvent, QObject, QCoreApplication, pyqtSlot, QRunnable, QTimer, Qt, QRect, QMetaObject
-from PyQt5.QtWidgets import QSystemTrayIcon, QApplication, QStyle, QMenu, QWidget, QPushButton, QLabel, QVBoxLayout, QMainWindow, QListWidget, QListWidgetItem, \
-    QDialog, QMessageBox, QSlider, QHBoxLayout, QSizePolicy, QGroupBox, QLineEdit, QFrame
-from pystray import Icon, MenuItem
-from PIL import Image
-from win32gui import GetWindowText, GetForegroundWindow
-from pyautogui import press, hotkey
 import ctypes
+
+from PyQt5.QtCore import QCoreApplication, QTimer, Qt, QRect
+from PyQt5.QtGui import QIcon
+from PyQt5.QtWidgets import QSystemTrayIcon, QApplication, QMenu, QWidget, QLabel, QVBoxLayout, QDialog, QSlider, QHBoxLayout, QGroupBox
+from pyautogui import hotkey
+from win32gui import GetWindowText, GetForegroundWindow
+
 # Hacky way to set task bar icon
 ctypes.windll.shell32.SetCurrentProcessExplicitAppUserModelID('sai.autosave')
 
