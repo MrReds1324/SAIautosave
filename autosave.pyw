@@ -1,4 +1,6 @@
 import ctypes
+import os
+import sys
 
 from PyQt5.QtCore import QCoreApplication, QTimer, Qt, QRect
 from PyQt5.QtGui import QIcon
@@ -10,7 +12,10 @@ from win32gui import GetWindowText, GetForegroundWindow
 ctypes.windll.shell32.SetCurrentProcessExplicitAppUserModelID('sai.autosave')
 
 SAI_NAME_STRING = "PaintTool SAI Ver.2"
-ICON_IMAGE = QIcon("resources/save.svg")
+if getattr(sys, 'frozen', False):
+    ICON_IMAGE = QIcon(os.path.join(sys._MEIPASS, "resources/save.svg"))
+else:
+    ICON_IMAGE = QIcon("resources/save.svg")
 
 import sys
 
