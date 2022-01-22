@@ -90,7 +90,7 @@ class SystemTrayIcon(QSystemTrayIcon):
 
         # Timer for handling auto saving
         self.timer = QTimer()
-        self.timer.setInterval(1000)
+        self.timer.setInterval(convert_min_to_milli(1))
         self.timer.timeout.connect(self.recurring_timer)
         self.timer.start()
 
